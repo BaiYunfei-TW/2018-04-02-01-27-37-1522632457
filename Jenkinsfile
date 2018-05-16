@@ -1,6 +1,6 @@
 // Scripted //
 node {
-    agent any
+    checkout scm
 	
 	stage('Build') {
 		buildInfo = rtGradle.run
