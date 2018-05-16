@@ -2,14 +2,12 @@
 node {
     checkout scm
 	
-	def rtGradle = Artifactory.newGradleBuild()
-	
 	stage('Build') {
 		echo 'Building...'
-		rtGradle.run
+		sh './gradlew build'
 	}
 	stage('Test'){
 		echo 'Testing...'
-		rtGradle.test
+		sh './gradlew test'
 	}
 }
