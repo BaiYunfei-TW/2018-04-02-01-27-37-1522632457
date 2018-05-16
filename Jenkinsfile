@@ -1,6 +1,6 @@
 // Declarative //
 pipeline {
-    agent anyS
+    agent any
 	
     stages {
         stage('Build') {
