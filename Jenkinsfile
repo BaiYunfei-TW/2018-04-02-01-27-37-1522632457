@@ -5,12 +5,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'gradle build'
+                buildInfo = rtGradle.run
             }
         }
         stage('Test'){
             steps {
-                sh 'gradle test'
+                testInfo = rtGradle.test
             }
         }
     }
