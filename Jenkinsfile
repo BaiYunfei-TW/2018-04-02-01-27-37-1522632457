@@ -1,16 +1,17 @@
-Jenkinsfile (Scripted Pipeline)
-node {
+// Declarative //
+pipeline {
+    agent any
 	checkout scm
 	
     stages {
         stage('Build') {
             steps {
-                sh './gradlew build' 
+                sh './gradlew build'
             }
         }
-		stage('Test') {
+        stage('Test'){
             steps {
-                sh './gradlew make' 
+                sh './gradlew test'
             }
         }
     }
