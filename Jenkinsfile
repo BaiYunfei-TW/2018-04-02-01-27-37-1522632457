@@ -1,14 +1,16 @@
-node {
+Jenkinsfile (Declarative Pipeline)
+pipeline {
 
-	checkout scm
-    
-	stage('Build') {
-        echo 'Building....'
-    }
-    stage('Test') {
-        echo 'Building....'
-    }
-    stage('Deploy') {
-        echo 'Deploying....'
+    stages {
+        stage('Build') {
+            steps {
+                sh './gradlew build' 
+            }
+        }
+		stage('Test') {
+            steps {
+                sh './gradlew make' 
+            }
+        }
     }
 }
