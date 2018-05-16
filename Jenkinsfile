@@ -1,6 +1,7 @@
-Jenkinsfile (Declarative Pipeline)
-pipeline {
-
+Jenkinsfile (Scripted Pipeline)
+node {
+	checkout scm
+	
     stages {
         stage('Build') {
             steps {
