@@ -1,7 +1,6 @@
 // Declarative //
 pipeline {
-    agent any
-	checkout scm
+    agent anyS
 	
     stages {
         stage('Build') {
