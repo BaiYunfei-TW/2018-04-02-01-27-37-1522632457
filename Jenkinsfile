@@ -1,17 +1,11 @@
-// Declarative //
-pipeline {
+// Scripted //
+node {
     agent any
 	
-    stages {
-        stage('Build') {
-            steps {
-                buildInfo = rtGradle.run
-            }
-        }
-        stage('Test'){
-            steps {
-                testInfo = rtGradle.test
-            }
-        }
-    }
+	stage('Build') {
+		buildInfo = rtGradle.run
+	}
+	stage('Test'){
+		testInfo = rtGradle.test
+	}
 }
