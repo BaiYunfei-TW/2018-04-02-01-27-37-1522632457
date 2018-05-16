@@ -1,13 +1,18 @@
-// Scripted //
-node {
-    checkout scm
+pipeline {
+    agent any
 	
-	stage('Build') {
-		echo 'Building...'
-		sh './gradlew build'
-	}
-	stage('Test'){
-		echo 'Testing...'
-		sh './gradlew test'
+	stages{
+		stage('Build') {
+			steps{
+				echo 'Building...'
+				sh './gradlew build'
+			}
+		}
+		stage('Test'){
+			steps{
+				echo 'Testing...'
+				sh './gradlew test'
+			}
+		}
 	}
 }
